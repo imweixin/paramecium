@@ -3,7 +3,8 @@
         {
             "name": "Linux",
             "includePath": [
-                "${workspaceFolder}/**"
+                "${workspaceFolder}/**",
+                "/usr/local/bin/sqlite3/include"
             ],
             "defines": [],
             "compilerPath": "/usr/local/bin/llvm/bin/clang",

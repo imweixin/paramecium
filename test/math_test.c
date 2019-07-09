@@ -1,8 +1,8 @@
+#define _S_STDIO_H_
 #define _W_MATH_H_
 #define _W_LOG_H_
 #define _W_TEST_H_
 
-#include <stdio.h>
 #include "lib/common.h"
 
 int mypow_test();
@@ -22,6 +22,5 @@ int mypow_test()
     {
         log_error("Wrong answser");
     }
-    printf("\n");
     return 1;
 }

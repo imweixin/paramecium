@@ -1,4 +1,24 @@
 // To include standard library
+#ifdef _S_STDIO_H_
+#ifndef _S_STDIO_H_D_
+#define _S_STDIO_H_D_
+#include <stdio.h>
+#endif
+#endif
+
+#ifdef _S_UTILITY_H_
+#ifndef _S_UTILITY_H_D_
+#define _S_UTILITY_H_D_
+#include <locale.h>
+#include <stdlib.h>
+#include <time.h>
+#include <uchar.h>
+#include <wchar.h>
+#include <ctype.h>
+#include <wctype.h>
+#endif
+#endif
+
 #ifdef _S_STRING_H_
 #ifndef _S_STRING_H_D_
 #define _S_STRING_H_D_
@@ -17,6 +37,7 @@
 #ifndef _S_MATH_H_D_
 #define _S_MATH_H_D_
 #include <math.h>
+#include <complex.h>
 #endif
 #endif
 
@@ -34,9 +55,8 @@
 #ifndef _S_TYPES_H_D_
 #define _S_TYPES_H_D_
 #include <stdbool.h>
+#include <stdint.h>
 #include <stdatomic.h> 
-#include <complex.h>
-#include <ctype.h>
 #endif
 #endif
 
@@ -63,4 +83,16 @@
 
 #ifdef _W_TEST_H_
 #include "lib/test.h"
+#endif
+
+#ifdef _W_SQLITE_H_
+#include "lib/sqlite.h"
+#endif
+
+// To include shared library
+#ifdef _S_SQLITE3_H_
+#ifndef _S_SQLITE3_D_
+#define _S_SQLITE3_D_
+#include <sqlite3.h>
+#endif
 #endif
