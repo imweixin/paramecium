@@ -1,0 +1,8 @@
+{
+    "files.autoSave": "afterDelay",
+    "files.associations": {
+        "limits.h": "c",
+        "time.h": "c",
+        "stdio.h": "c"
+    }
+}

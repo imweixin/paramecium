@@ -1,0 +1,28 @@
+{
+    "tasks": [
+        {
+            "type": "shell",
+            "label": "clang build",
+            "command": "/usr/local/bin/llvm/bin/clang",
+            "args": [
+                "${file}",
+                "${workspaceFolder}/lib/math.c",
+                "-o",
+                "${workspaceFolder}/bin/${fileBasenameNoExtension}",
+                "-I",
+                "${workspaceFolder}",
+                "-g",
+                "-Wall",
+                "-std=c17"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "options": {
+                "cwd": "/usr/local/bin/llvm/bin"
+            }
+        }
+    ],
+    "version": "2.0.0"
+}

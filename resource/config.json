@@ -1,0 +1,11 @@
+{
+    "debug": {
+        "msg_format": "[Date Time]: name : message",
+        "log_level": "DEBUG"
+    },
+    "database": [
+        {
+            "SQLite": null
+        }
+    ]
+}
