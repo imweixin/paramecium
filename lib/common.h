@@ -89,10 +89,21 @@
 #include "lib/sqlite.h"
 #endif
 
-// To include shared library
-#ifdef _S_SQLITE3_H_
-#ifndef _S_SQLITE3_D_
-#define _S_SQLITE3_D_
+#ifdef _W_REDIS_H_
+#include "lib/redis.h"
+#endif
+
+// To include external shared library
+#ifdef _E_SQLITE3_H_
+#ifndef _E_SQLITE3_H_D_
+#define _E_SQLITE3_H_D_
 #include <sqlite3.h>
+#endif
+#endif
+
+#ifdef _E_REDIS_H_
+#ifndef _E_REDIS_H_D_
+#define _E_REDIS_H_D_
+#include <hiredis.h>
 #endif
 #endif

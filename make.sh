@@ -3,13 +3,14 @@
 CC=clang
 CXX=clang++
 SQLITE_HOME=/usr/local/bin/sqlite3
+HIREDIS_HOME=/usr/local/bin/redis/hiredis
 
 loc=`pwd`
 # SCRIPTPATH="$( cd "$(dirname "$0")" ; pwd -P )"
 # Define library
-lib_path=("$SQLITE_HOME/lib")
+lib_path=("$SQLITE_HOME/lib" "$HIREDIS_HOME/lib")
 # Define include path
-include_path=("$loc" "$SQLITE_HOME/include")
+include_path=("$loc" "$SQLITE_HOME/include" "$HIREDIS_HOME/include/hiredis")
 # Define source files path
 src_path=("$loc/lib" "$loc/src")
 # Define test files path

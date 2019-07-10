@@ -3,24 +3,16 @@
         {
             "type": "shell",
             "label": "clang build",
-            "command": "/usr/local/bin/llvm/bin/clang",
+            "command": "${workspaceFolder}/make.sh",
             "args": [
-                "${file}",
-                "${workspaceFolder}/lib/math.c",
-                "-o",
-                "${workspaceFolder}/bin/${fileBasenameNoExtension}",
-                "-I",
-                "${workspaceFolder}",
-                "-g",
-                "-Wall",
-                "-std=c17"
+                "test"
             ],
             "group": {
                 "kind": "build",
                 "isDefault": true
             },
             "options": {
-                "cwd": "/usr/local/bin/llvm/bin"
+                "cwd": "${workspaceFolder}"
             }
         }
     ],

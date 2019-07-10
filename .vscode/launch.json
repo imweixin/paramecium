@@ -10,14 +10,14 @@
             "request": "launch",
             "program": "${workspaceFolder}/bin/${fileBasenameNoExtension}",
             "args": [],
-            "stopAtEntry": false,
+            "stopAtEntry": true,
             "cwd": "${workspaceFolder}",
             "environment": [],
             "externalConsole": false,
-            "preLaunchTask": "clang build",
+            // "preLaunchTask": "clang build",
             "linux": {
                 "miDebuggerPath": "/usr/bin/gdb",
-                "MIMode": "lldb",
+                "MIMode": "gdb",
                 "setupCommands": [
                     {
                         "description": "Enable pretty-printing for gdb",

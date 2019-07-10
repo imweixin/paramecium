@@ -1,5 +1,5 @@
 #define _S_STDIO_H_
-#define _S_SQLITE3_H_
+#define _E_SQLITE3_H_
 #define _W_SQLITE_H_
 #define _W_LOG_H_
 
