@@ -62,35 +62,35 @@
 
 // To include custom library
 #ifdef _W_UTIL_H_
-#include "lib/util.h"
+#include "include/util.h"
 #endif
 
 #ifdef _W_MATH_H_
-#include "lib/math.h"
+#include "include/math.h"
 #endif
 
 #ifdef _W_FILE_H_
-#include "lib/file.h"
+#include "include/file.h"
 #endif
 
 #ifdef _W_STRING_H_
-#include "lib/string.h"
+#include "include/string.h"
 #endif
 
 #ifdef _W_LOG_H_
-#include "lib/log.h"
+#include "include/log.h"
 #endif
 
 #ifdef _W_TEST_H_
-#include "lib/test.h"
+#include "include/test.h"
 #endif
 
 #ifdef _W_SQLITE_H_
-#include "lib/sqlite.h"
+#include "include/sqlite.h"
 #endif
 
 #ifdef _W_REDIS_H_
-#include "lib/redis.h"
+#include "include/redis.h"
 #endif
 
 // To include external shared library
@@ -104,6 +104,6 @@
 #ifdef _E_REDIS_H_
 #ifndef _E_REDIS_H_D_
 #define _E_REDIS_H_D_
-#include <hiredis.h>
+#include <hiredis/hiredis.h>
 #endif
 #endif

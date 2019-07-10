@@ -1,5 +1,6 @@
 #define _W_LOG_H_
-#include "lib/common.h"
+
+#include "src/common.h"
 
 /* Do pow operation */
 double mypow(double x, int n)

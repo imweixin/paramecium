@@ -1,7 +1,7 @@
+#define _S_STDIO_H_
 #define _W_UTIL_H_
 
-#include <stdio.h>
-#include "common.h"
+#include "src/common.h"
 
 // TODO:Print message to file and database
 int _log_error(const char *msg, char const *caller_name)

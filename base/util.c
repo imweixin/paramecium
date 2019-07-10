@@ -1,8 +1,8 @@
+#define _S_STDIO_H_
 #define _S_TIME_H_
 #define _S_STRING_H_
 
-#include <stdio.h>
-#include "lib/common.h"
+#include "src/common.h"
 
 char *get_time_str(time_t t);
 char *get_now_time_str();

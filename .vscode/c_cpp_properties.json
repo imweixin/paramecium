@@ -5,7 +5,7 @@
             "includePath": [
                 "${workspaceFolder}/**",
                 "/usr/local/bin/sqlite3/include",
-                "/usr/local/bin/redis/hiredis/include/hiredis"
+                "/usr/local/bin/redis/hiredis/include"
             ],
             "defines": [],
             "compilerPath": "/usr/local/bin/llvm/bin/clang",

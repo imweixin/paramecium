@@ -2,7 +2,7 @@
 #define _E_REDIS_H_
 #define _W_LOG_H_
 
-#include "lib/common.h"
+#include "src/common.h"
 
 int main(int argc, char const *argv[])
 {
@@ -18,6 +18,10 @@ int main(int argc, char const *argv[])
         {
             log_error("Can't allocate redis context");
         }
+    }
+    else
+    {
+        log_debug("Connect successfully!");
     }
     return 0;
 }

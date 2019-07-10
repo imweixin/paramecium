@@ -2,7 +2,7 @@
 #define _S_LIMTIS_H_
 #define _S_TYPES_H_
 
-#include "lib/common.h"
+#include "src/common.h"
 
 bool test_equal(double ans, double result)
 {

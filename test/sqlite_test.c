@@ -3,7 +3,7 @@
 #define _W_SQLITE_H_
 #define _W_LOG_H_
 
-#include "lib/common.h"
+#include "src/common.h"
 
 int main(int argc, char const *argv[])
 {

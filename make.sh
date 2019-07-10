@@ -10,9 +10,9 @@ loc=`pwd`
 # Define library
 lib_path=("$SQLITE_HOME/lib" "$HIREDIS_HOME/lib")
 # Define include path
-include_path=("$loc" "$SQLITE_HOME/include" "$HIREDIS_HOME/include/hiredis")
+include_path=("$loc" "$SQLITE_HOME/include" "$HIREDIS_HOME/include")
 # Define source files path
-src_path=("$loc/lib" "$loc/src")
+src_path=("$loc/base" "$loc/src")
 # Define test files path
 test_path=("$loc/test")
 
