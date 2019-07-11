@@ -1,9 +1,9 @@
 #define _S_STDIO_H_
-#define _W_MATH_H_
-#define _W_LOG_H_
-#define _W_TEST_H_
+#define _BASE_MATH_H_
+#define _BASE_LOG_H_
+#define _BASE_TEST_H_
 
-#include "src/common.h"
+#include "common.h"
 
 int mypow_test();
 

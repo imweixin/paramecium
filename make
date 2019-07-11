@@ -2,28 +2,39 @@
 # make.sh
 CC=clang
 CXX=clang++
+COMPILER_PARA="-g -Wall -std=c17 -Wno-unused-function"
 SQLITE_HOME=/usr/local/bin/sqlite3
-HIREDIS_HOME=/usr/local/bin/redis/hiredis
 
 loc=`pwd`
 # SCRIPTPATH="$( cd "$(dirname "$0")" ; pwd -P )"
 # Define library
-lib_path=("$SQLITE_HOME/lib" "$HIREDIS_HOME/lib")
+lib_path=("$SQLITE_HOME/lib")
 # Define include path
-include_path=("$loc" "$SQLITE_HOME/include" "$HIREDIS_HOME/include")
+include_path=("$loc/src" "$loc/lib" "$SQLITE_HOME/include")
 # Define source files path
-src_path=("$loc/base" "$loc/src")
+src_path=("$loc/src")
 # Define test files path
 test_path=("$loc/test")
 
-# Get source files
+# Get project source files
 for i in ${src_path[*]} ;do
-    if [[ $1 == "test" ]] && [[ $i == *src ]];then
-        continue
-    fi
-    for file in $i/*.c ;do
+    for file in $(find $i -maxdepth 2 -name '*.c') ;do
+        if [[ $1 == "test" ]] && [[ $i == */src ]] && [[ $file == */main.c ]] ;then
+            continue
+        fi
         source_str="$source_str $file"
-    done    
+    done
+done
+
+# Get library source files
+for file in $(find lib -maxdepth 2 -name '*.c') ;do
+    parentDir=$(dirname "$file")
+    parentDir=${parentDir##*/}
+    if [[ $file != *test.c ]];then
+        source_str="$source_str $file"
+    else
+        continue
+    fi    
 done
 
 # Get include diretories
@@ -43,7 +54,7 @@ done
 
 # If build or run then compile source file
 if [ -z "$1" ] || [[ $1 =~ ^(build|run)$ ]] ;then
-    $CC $source_str -o $loc/bin/main $include_str $lib_str $linker_str -g -Wall -std=c17
+    $CC $source_str -o $loc/bin/main $include_str $lib_str $linker_str $COMPILER_PARA
 fi
 
 # if run then run main ,if test then run test
@@ -57,7 +68,7 @@ elif [ "$1" == "test" ] ;then
             filename="${fullname%.*}"
             extension="${fullname##*.}"
             # Compile test file
-            $CC $source_str $file -o $loc/bin/$filename $include_str $lib_str $linker_str -g -Wall -std=c17
+            $CC $source_str $file -o $loc/bin/$filename $include_str $lib_str $linker_str $COMPILER_PARA
             # Run test
             $loc/bin/$filename
         done

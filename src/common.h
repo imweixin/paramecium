@@ -61,36 +61,36 @@
 #endif
 
 // To include custom library
-#ifdef _W_UTIL_H_
-#include "include/util.h"
+#ifdef _BASE_UTIL_H_
+#include "base/util.h"
 #endif
 
-#ifdef _W_MATH_H_
-#include "include/math.h"
+#ifdef _BASE_MATH_H_
+#include "base/math.h"
 #endif
 
-#ifdef _W_FILE_H_
-#include "include/file.h"
+#ifdef _BASE_FILE_H_
+#include "base/file.h"
 #endif
 
-#ifdef _W_STRING_H_
-#include "include/string.h"
+#ifdef _BASE_STRING_H_
+#include "base/string.h"
 #endif
 
-#ifdef _W_LOG_H_
-#include "include/log.h"
+#ifdef _BASE_LOG_H_
+#include "base/log.h"
 #endif
 
-#ifdef _W_TEST_H_
-#include "include/test.h"
+#ifdef _BASE_TEST_H_
+#include "base/test.h"
 #endif
 
-#ifdef _W_SQLITE_H_
-#include "include/sqlite.h"
+#ifdef _BASE_SQLITE_H_
+#include "base/sqlite.h"
 #endif
 
-#ifdef _W_REDIS_H_
-#include "include/redis.h"
+#ifdef _BASE_REDIS_H_
+#include "base/redis.h"
 #endif
 
 // To include external shared library

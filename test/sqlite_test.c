@@ -1,9 +1,9 @@
 #define _S_STDIO_H_
 #define _E_SQLITE3_H_
-#define _W_SQLITE_H_
-#define _W_LOG_H_
+#define _BASE_SQLITE_H_
+#define _BASE_LOG_H_
 
-#include "src/common.h"
+#include "common.h"
 
 int main(int argc, char const *argv[])
 {
