@@ -61,6 +61,7 @@
 #endif
 
 // To include custom library
+// Base module
 #ifdef _BASE_UTIL_H_
 #include "base/util.h"
 #endif
@@ -85,25 +86,19 @@
 #include "base/test.h"
 #endif
 
-#ifdef _BASE_SQLITE_H_
-#include "base/sqlite.h"
+// Database module
+#ifdef _DB_SQLITE_H_
+#include "db/sqlite.h"
 #endif
 
-#ifdef _BASE_REDIS_H_
-#include "base/redis.h"
+#ifdef _DB_REDIS_H_
+#include "db/redis.h"
 #endif
 
-// To include external shared library
-#ifdef _E_SQLITE3_H_
-#ifndef _E_SQLITE3_H_D_
-#define _E_SQLITE3_H_D_
-#include <sqlite3.h>
-#endif
+#ifdef _DB_PGSQL_H_
+#include "db/pgsql.h"
 #endif
 
-#ifdef _E_REDIS_H_
-#ifndef _E_REDIS_H_D_
-#define _E_REDIS_H_D_
-#include <hiredis/hiredis.h>
-#endif
+#ifdef _DB_MYSQL_H_
+#include "db/mysql.h"
 #endif

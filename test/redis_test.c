@@ -1,6 +1,6 @@
 #define _S_STDIO_H_
-#define _E_REDIS_H_
 #define _BASE_LOG_H_
+#define _DB_REDIS_H_
 
 #include "common.h"
 

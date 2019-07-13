@@ -7,9 +7,15 @@ for file in /usr/local/bin/sqlite3/lib/*so ;do
     echo ${file%.so}
 done
 
-# for file in lib/**/*.c src/*.c src/**/*.c;do
-#     echo $file
-# done
+for dir in lib/* ;do
+    if [ -d $dir/src ] ;then
+        dir=$dir/src
+    fi
+    for file in $(find $dir -maxdepth 1 -name '*.c') ;do
+        source_str="$source_str $file"
+    done
+done
+echo $source_str
 
 # for file in $(find src lib -maxdepth 2 -name '*.c' -or -name '*.h') ;do
 #     echo $file
@@ -24,4 +30,3 @@ for file in $(find lib -maxdepth 2 -name '*.c') ;do
         continue
     fi
 done
-echo $source_str

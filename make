@@ -4,13 +4,16 @@ CC=clang
 CXX=clang++
 COMPILER_PARA="-g -Wall -std=c17 -Wno-unused-function"
 SQLITE_HOME=/usr/local/bin/sqlite3
+MYSQL_HOME=/usr/local/bin/mysql
+PGSQL_HOME=/usr/local/bin/postgresql-11.2
 
 loc=`pwd`
 # SCRIPTPATH="$( cd "$(dirname "$0")" ; pwd -P )"
 # Define library
-lib_path=("$SQLITE_HOME/lib")
+lib_path=("$SQLITE_HOME/lib" "$MYSQL_HOME/lib" "$PGSQL_HOME/lib")
+lib_name=("sqlite3" "mysqlclient" "pq")
 # Define include path
-include_path=("$loc/src" "$loc/lib" "$SQLITE_HOME/include")
+include_path=("$loc/src" "$loc/lib" "$SQLITE_HOME/include" "$MYSQL_HOME/include" "$PGSQL_HOME/include")
 # Define source files path
 src_path=("$loc/src")
 # Define test files path
@@ -45,10 +48,11 @@ done
 # Get linker file
 for i in ${lib_path[*]} ;do
     lib_str="$lib_str -L$i"
-    for file in $i/*.so ;do
-        libname="${file##*/lib}"
-        libname="${libname%%.so}"
-        linker_str="$linker_str -Wl,-rpath,$i -l$libname"
+    # export LIBRARY_PATH=$LIBRARY_PATH:$i #for compile
+    for name in ${lib_name[@]} ;do
+        for file in $(find $i -maxdepth 1 -name "lib$name.so");do
+            linker_str="$linker_str -Wl,-rpath,$i -l$name"
+        done
     done
 done
 

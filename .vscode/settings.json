@@ -4,6 +4,9 @@
         "limits.h": "c",
         "time.h": "c",
         "stdio.h": "c",
-        "tgmath.h": "c"
+        "tgmath.h": "c",
+        "stat.h": "c",
+        "types.h": "c",
+        "sqlite.h": "c"
     }
 }

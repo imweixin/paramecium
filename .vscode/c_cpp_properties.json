@@ -5,6 +5,8 @@
             "includePath": [
                 "${workspaceFolder}/**",
                 "/usr/local/bin/sqlite3/include",
+                "/usr/local/bin/mysql/include",
+                "/usr/local/bin/postgresql-11.2/include",
                 "${workspaceFolder}/src",
                 "${workspaceFolder}/lib"
             ],

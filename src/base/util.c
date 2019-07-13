@@ -1,5 +1,5 @@
 #define _S_STDIO_H_
-#define _S_TIME_H_
+#define _S_UTILITY_H_
 #define _S_STRING_H_
 
 #include "common.h"

@@ -1,17 +1,18 @@
 #define _S_STDIO_H_
-#define _E_SQLITE3_H_
-#define _BASE_SQLITE_H_
 #define _BASE_LOG_H_
+#define _DB_SQLITE_H_
 
 #include "common.h"
+#include <sys/types.h>
+#include <sys/stat.h>
 
 int main(int argc, char const *argv[])
 {
     sqlite3 *db;
-    int rc = sqlite3_open("file:/usr/local/bin/sqlite3/bin/test.db", &db);
+    int rc = sqlite3_open("resource/test.db", &db);
     if (rc)
     {
-        log_error("Cannot open database");
+        log_error(sqlite3_errmsg(db));
         sqlite3_close(db);
         return 1;
     }
